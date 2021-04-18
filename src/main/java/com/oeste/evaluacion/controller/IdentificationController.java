@@ -67,14 +67,13 @@ public class IdentificationController {
 	
 	// Logical delete a identification
 	@DeleteMapping("/{id}")
-	public ResponseEntity<?> deleteLogical (@PathVariable(value = "id") Long identificationId) {
+	public ResponseEntity<String> deleteLogical (@PathVariable(value = "id") Long identificationId) {
 		Optional<Identification> oIdentification = identificationService.findById(identificationId);
 		if (!oIdentification.isPresent()) {
 			return ResponseEntity.notFound().build();
 		}
 		
 		oIdentification.get().setEnabled(false);
-//		identificationService.deleteById(identificationId);
 		identificationService.save(oIdentification.get());
 		return ResponseEntity.ok().build();
 	}
@@ -82,10 +81,9 @@ public class IdentificationController {
 	// Read identifications
 	@GetMapping
 	public List<Identification> readAll () {
-		List<Identification> identifications = StreamSupport
+		return StreamSupport
 				.stream(identificationService.findAll().spliterator(), false)
 				.collect(Collectors.toList());
-		return identifications;
 	}
 	
 }

@@ -81,7 +81,6 @@ public class PersonController {
 		}
 		
 		oPerson.get().setEnabled(false);
-//		personService.deleteById(personId);
 		personService.save(oPerson.get());
 		return ResponseEntity.ok().build();
 	}
@@ -89,10 +88,9 @@ public class PersonController {
 	// Read people
 	@GetMapping
 	public List<Person> readAll () {
-		List<Person> people = StreamSupport
+		return StreamSupport
 				.stream(personService.findAll().spliterator(), false)
 				.collect(Collectors.toList());
-		return people;
 	}
 	
 }

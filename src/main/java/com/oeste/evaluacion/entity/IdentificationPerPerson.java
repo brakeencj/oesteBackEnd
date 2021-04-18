@@ -21,10 +21,10 @@ public class IdentificationPerPerson implements Serializable{
 	private Long id; 
 	
 	@Column(length = 50, nullable = false)
-	private String id_person;
+	private String idPerson;
 	
 	@Column(length = 50, nullable = false)
-	private String id_identification;
+	private String idIdentification;
 	
 	private Date createAt;
 
@@ -36,20 +36,20 @@ public class IdentificationPerPerson implements Serializable{
 		this.id = id;
 	}
 
-	public String getId_person() {
-		return id_person;
+	public String getIdPerson() {
+		return idPerson;
 	}
 
-	public void setId_person(String id_person) {
-		this.id_person = id_person;
+	public void setIdPerson(String idPerson) {
+		this.idPerson = idPerson;
 	}
 
-	public String getId_identification() {
-		return id_identification;
+	public String getIdIdentification() {
+		return idIdentification;
 	}
 
-	public void setId_identification(String id_identification) {
-		this.id_identification = id_identification;
+	public void setIdIdentification(String idIdentification) {
+		this.idIdentification = idIdentification;
 	}
 
 	public Date getCreateAt() {
