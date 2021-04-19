@@ -46,9 +46,6 @@ _Menciona las herramientas que utilizaste para crear tu proyecto_
 * [Maven](https://maven.apache.org/) - Manejador de dependencias
 * [IDE STS](https://spring.io/tools)
 
-## Contribuyendo 🖇️
-
-Por favor lee el [CONTRIBUTING.md](https://gist.github.com/villanuevand/xxxxxx) para detalles de nuestro código de conducta, y el proceso para enviarnos pull requests.
 
 ## Versionado 📌
 
@@ -57,10 +54,6 @@ Usamos [SemVer](http://semver.org/) para el versionado. Para todas las versiones
 ## Autor ✒️
 
 * **Gabriel Cervantes** - *Desarrollador Full Stack*  
-
-## Licencia 📄
-
-Este proyecto está bajo la Licencia (Tu Licencia) - mira el archivo [LICENSE.md](LICENSE.md) para detalles
 
 ## Expresiones de Gratitud 🎁
 
