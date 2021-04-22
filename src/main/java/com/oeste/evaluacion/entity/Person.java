@@ -25,7 +25,7 @@ public class Person implements Serializable{
 	private String name;
 	
 	@Column(nullable = false)
-	private Number age;
+	private Long age;
 	
 	@Column(nullable = false)
 	private String gender;
@@ -40,7 +40,7 @@ public class Person implements Serializable{
 
 	public Person() {}
 	
-	public Person(String name, Number age) {
+	public Person(String name, Long age) {
 		this.name = name;
 		this.age = age;
 		this.createAt = new Date();
@@ -49,7 +49,7 @@ public class Person implements Serializable{
 		this.code = cadenaAleatoria(10);
 	}
 	
-	public Person(String name, Number age, String gender) {
+	public Person(String name, Long age, String gender) {
 		this.name = name;
 		this.age = age;
 		this.createAt = new Date();
@@ -100,11 +100,11 @@ public class Person implements Serializable{
 		this.name = name;
 	}
 
-	public Number getAge() {
+	public Long getAge() {
 		return age;
 	}
 
-	public void setAge(Number age) {
+	public void setAge(Long age) {
 		this.age = age;
 	}
 

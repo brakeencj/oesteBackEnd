@@ -3,11 +3,13 @@ package com.oeste.evaluacion.entity;
 import java.io.Serializable;
 import java.util.Date;
 
-import javax.persistence.Column;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -19,12 +21,14 @@ public class IdentificationPerPerson implements Serializable{
 	@Id 
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id; 
+
+	@ManyToOne(optional = false, cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.DETACH, CascadeType.REFRESH})
+	@JoinColumn(name="idPerson")
+	private Person person;
 	
-	@Column(length = 50, nullable = false)
-	private String idPerson;
-	
-	@Column(length = 50, nullable = false)
-	private String idIdentification;
+	@ManyToOne(optional = false, cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.DETACH, CascadeType.REFRESH})
+	@JoinColumn(name="idIdentification")
+	private Identification identification;
 	
 	private Date createAt;
 
@@ -36,20 +40,20 @@ public class IdentificationPerPerson implements Serializable{
 		this.id = id;
 	}
 
-	public String getIdPerson() {
-		return idPerson;
+	public Person getPerson() {
+		return person;
 	}
 
-	public void setIdPerson(String idPerson) {
-		this.idPerson = idPerson;
+	public void setPerson(Person person) {
+		this.person = person;
 	}
 
-	public String getIdIdentification() {
-		return idIdentification;
+	public Identification getIdentification() {
+		return identification;
 	}
 
-	public void setIdIdentification(String idIdentification) {
-		this.idIdentification = idIdentification;
+	public void setIdentification(Identification identification) {
+		this.identification = identification;
 	}
 
 	public Date getCreateAt() {
@@ -59,8 +63,5 @@ public class IdentificationPerPerson implements Serializable{
 	public void setCreateAt(Date createAt) {
 		this.createAt = createAt;
 	}
-	
-	
-	
-	
+
 }

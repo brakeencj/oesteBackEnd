@@ -24,7 +24,7 @@ public class Identification implements Serializable{
 	private String identificationName;
 	
 	@Column(nullable = false)
-	private Number description;
+	private Long description;
 	
 	private Date createAt;
 	
@@ -34,7 +34,7 @@ public class Identification implements Serializable{
 
 	public Identification() {}
 	
-	public Identification(String identificationName, Number description) {
+	public Identification(String identificationName, Long description) {
 		this.identificationName = identificationName;
 		this.description = description;
 		this.createAt = new Date();
@@ -57,11 +57,11 @@ public class Identification implements Serializable{
 		this.identificationName = identificationName;
 	}
 
-	public Number getDescription() {
+	public Long getDescription() {
 		return description;
 	}
 
-	public void setDescription(Number description) {
+	public void setDescription(Long description) {
 		this.description = description;
 	}
 
