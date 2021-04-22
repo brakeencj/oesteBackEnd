@@ -16,8 +16,9 @@ public class SwaggerConfig {
 	public Docket api() {
 		return new Docket(DocumentationType.SWAGGER_2)
 				.select()
-				.apis(RequestHandlerSelectors.basePackage("com.openwebinars.net.rest.controller"))
+				.apis(RequestHandlerSelectors.basePackage("com.oeste.evaluacion.controller"))
 				.paths(PathSelectors.any())
+				// .paths(regex("/api.*"))
 				.build();
 	}
 }
